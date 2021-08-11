@@ -1,41 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import Task from "./Task";
+import React from "react";
 
-const tasks = [
-    {
-        id: 1,
-        text: 'Homework',
-        day: 'Feb 2nd at 2:50pm',
-        reminder: true,
-    },
-    {
-        id: 2,
-        text: 'Football',
-        day: 'Feb 8th at 6:30pm',
-        reminder: true,
-    },
-    {
-        id: 3,
-        text: 'Party',
-        day: 'Mar 19th at 9:20am',
-        reminder: false,
-    },
-]
+const Tasks = ({ tasks, onDelete, onToggle }) => {
+  return (
+    <div>
+      {tasks.map((task) => (
+        <Task
+          key={task.id}
+          task={task}
+          onDelete={onDelete}
+          onToggle={onToggle}
+        />
+      ))}
+    </div>
+  );
+};
 
-const Tasks = ({}) => {
-    return(
-        <div>
-
-        </div>
-    )
-}
-
-Button.defaultProps = {
-    
-}
-
-Button.propTypes = {
-    
-}
-
-export default Tasks
+export default Tasks;
